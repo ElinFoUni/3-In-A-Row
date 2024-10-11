@@ -6,7 +6,7 @@ public class GameSetup {
     // The constructor, for now it's a 3x3 grid:
     public GameSetup() {
         board = new char[3][3];
-        // For loop that will run as many times as the grid has columns
+        // For loop that will run as many times as the grid has rows (for now only 3)
         for (int i = 0; i < board.length; i++) {
 
         }
