@@ -1,6 +1,7 @@
-// This class handles the core loop of the game as well as checks for errors in the player input
+// This class handles the core loop of the game
 import java.util.Scanner;
 
 public class Gameplay {
+    String Player= "Unknown";
 
 }

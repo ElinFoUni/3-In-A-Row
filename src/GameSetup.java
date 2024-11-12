@@ -3,7 +3,12 @@ make the grid larger at some point. I updated it to check the validity of the pl
 public class GameSetup {
     private char[][] board; // Two-dimensional array declared
 
-    // The constructor, for now it's a 3x3 grid:
+    /*
+    public GameSetup(char[][] board) {
+        this.board = board;
+    }*/
+
+    // For now it's a 3x3 grid:
     public GameSetup() {
         board = new char[3][3];
         // For loop that will run as many times as the grid has rows (for now only 3)
@@ -16,6 +21,8 @@ public class GameSetup {
     public boolean isValidMove(int row, int col) {
         return row >= 0 && row < board.length && col >= 0 && col < board[row].length && board[row][col] == ' ';
     }
+
+
 
     // move method,,,
 
