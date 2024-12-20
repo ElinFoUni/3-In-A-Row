@@ -9,8 +9,8 @@ public class GameSetup {
     }*/
 
     // For now it's a 3x3 grid:
-    public GameSetup() {
-        board = new char[3][3];
+    public GameSetup(int x, int y) {
+        board = new char[x][y];
         // For loop that will run as many times as the grid has rows (for now only 3)
         for (int i = 0; i < board.length; i++) {
 
