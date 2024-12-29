@@ -1,3 +1,4 @@
+import java.sql.SQLOutput;
 import java.util.Scanner;
 
 
@@ -11,9 +12,14 @@ public class Menu {
         boolean end = false;
         Player humanPlayer = new Player();
 
-        while (!end); {
-            System.out.println("Welcome to the menu");
-            System.out.println("Please enter your name: ");
+        System.out.println("Welcome!");
+        System.out.println("Please enter your name: ");
+
+        do {
+            System.out.println();
+
+        } while (!end); {
+
 
 
         }

@@ -11,7 +11,7 @@ public class Player {
     }
 
     public void playerName(String name) {
-        this.name = sc.nextLine();
+        this.name = InputValidator.nameCheck(sc.nextLine());
     }
 
     @Override
