@@ -1,19 +1,41 @@
 import java.util.Scanner;
 
 public class InputValidator {
-    Scanner sc = new Scanner(System.in);
+    static Scanner sc = new Scanner(System.in);
 
     // checks if the player name is valid or not.
-     static String nameCheck(String input) {
-         if (input == null || input.isBlank()) { // Java 11 or later, otherwise it needs to say: input.trim().isEmpty()
+     public static String nameCheck() {
+         String name = sc.nextLine();
+         // Java 11 or later, otherwise it needs to say: input.trim().isEmpty()
+         while (name == null || name.isBlank()) {
              System.out.println("Please enter a valid name." + System.lineSeparator());
+             name = sc.nextLine();
          }
-         return input;
+         return name;
      }
 
-     // TODO Move check
-    // TODO menu check?
+     //TODO Check if you need input.isEmpty() ^^
 
+    // TODO Move check number
+
+    public static Short menuSelection() {
+         Short input = sc.nextShort();
+         while (!sc.hasNextShort()) {
+             System.out.println("Please enter a valid number." + System.lineSeparator());
+         }
+         return input;
+    }
+
+
+    /*static boolean isShort(String number) {
+        try {
+            Short.parseShort(number);
+            return true;
+            }
+        catch (NumberFormatException e){
+            return false;
+            }
+    }*/
 
 
 

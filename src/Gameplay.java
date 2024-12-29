@@ -5,4 +5,11 @@ public class Gameplay {
     String player = "Unknown";
 
 
+    // TODO Game Flow
+        // Human Move
+        // AI Move
+        // Check valid move
+    // TODO Check Win/Lose
+    // TODO Check Draw
+
 }

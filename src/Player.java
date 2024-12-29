@@ -10,10 +10,6 @@ public class Player {
         this.name = "Unknown";
     }
 
-    public void playerName(String name) {
-        this.name = InputValidator.nameCheck(sc.nextLine());
-    }
-
     @Override
     public String toString() {
         return "Player{" +
