@@ -1,10 +1,17 @@
 // Used to create players and asks how many people are playing
 
-public class Player {
-    String name = "unknown";
+import java.util.Scanner;
 
-    public Player(String name) {
-        this.name = name;
+public class Player {
+    String name;
+    Scanner sc = new Scanner(System.in);
+
+    public Player() {
+        this.name = "Unknown";
+    }
+
+    public void playerName(String name) {
+        this.name = sc.nextLine();
     }
 
     @Override
@@ -13,4 +20,5 @@ public class Player {
                 "Hi, '" + name + "!" + '\'' +
                 '}';
     }
+
 }

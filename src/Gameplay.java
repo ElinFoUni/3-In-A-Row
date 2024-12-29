@@ -2,6 +2,7 @@
 import java.util.Scanner;
 
 public class Gameplay {
-    String Player= "Unknown";
+    String player = "Unknown";
+
 
 }
