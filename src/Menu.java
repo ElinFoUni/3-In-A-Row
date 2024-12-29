@@ -15,6 +15,7 @@ public class Menu {
         System.out.println("Please enter your name: ");
         humanPlayer.name = InputValidator.nameCheck();
         humanPlayer2.name = InputValidator.nameCheck();
+        humanPlayer.score
 
         while (!end) {
             boolean twoPlayers = false;

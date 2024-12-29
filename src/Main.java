@@ -7,20 +7,20 @@ public class Main {
 
     }
 
+
+    //GODKÄNT
     // TODO spelbart mellan två människor som turas om att ge indata till terminalen/kommandotolken där spelet visas med text-baserad grafik.
-    //* Spelet ska kontrollera och meddela vilken spelare som vunnit eller om spelet slutat oavgjort
-    //* Spelet ska vid varje drag kontrollera att indata motsvarar en tom ruta i rutnätet
-    //* När en spelare vunnit börjar spelet om från början.
-    //* Din kod skall vara skriven på engelska: variabelnamn, klassnamn, metodnamn och helst även kommentarer
-    //* Spelat skall vara skrivet Objektorienterat, så det skall innehålla olika klasser.
-    //* Projektet finns upplagt på GitHub.
-    //
-    //Dessutom ska koden vara strukturerad och du ska visa på att du förstår och kan använda dig av variabler, strängar, tal, villkorssatser, loopar och funktioner i Java. Onödig kodupprepning ska i största mån undvikas.
-    //
-    //För betyget **väl godkänt** ska spelet, utöver kraven för godkänt, minst uppfylla nedan krav
-    //
-    //* Spelet ska fråga om spelarnas namn och vid varje drag skriva ut vems tur det är
-    //* Spelet ska räkna hur många vinster varje spelare har
+    // TODO Spelet ska kontrollera och meddela vilken spelare som vunnit eller om spelet slutat oavgjort
+    // TODO Spelet ska vid varje drag kontrollera att indata motsvarar en tom ruta i rutnätet
+    // TODO När en spelare vunnit börjar spelet om från början.
+    // TODO Engelska
+    // TODO Objektorienterat, nnehålla olika klasser.
+    // TODO Projektet finns upplagt på GitHub.
+
+
+    // VG
+    // TODO Spelet ska fråga om spelarnas namn och vid varje drag skriva ut vems tur det är
+    // TODO Spelet ska räkna hur många vinster varje spelare har
     //* Indata från användaren skall korrekt felhanteras så spelet varken kraschar eller att andra fel uppstår
     //* Under projektet har Git använts kontinuerlig och versionshistorik finns tillgänglig i den slutgiltiga inlämningen
     //
