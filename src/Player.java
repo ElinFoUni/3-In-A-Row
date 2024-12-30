@@ -1,16 +1,9 @@
-// Used to create players and asks how many people are playing
-
 public class Player {
-    String name = "unknown";
+    String name;
+    int score;
 
-    public Player(String name) {
-        this.name = name;
-    }
-
-    @Override
-    public String toString() {
-        return "Player{" +
-                "Hi, '" + name + "!" + '\'' +
-                '}';
+    public Player() {
+        name = "Unknown";
+        score = 0;
     }
 }

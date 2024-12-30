@@ -1,7 +1,7 @@
-// If the user plays against a computer
-
-import java.util.Random; // So that the computer can randomize an answer
-
-public class AI {
-
+// extends the Player class so the AI can use the same parameter variables
+public class AI extends Player {
+    public AI() {
+        super();
+        this.name = "the AI";
+    }
 }
