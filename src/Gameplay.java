@@ -5,6 +5,16 @@ public class Gameplay {
     String player = "Unknown";
 
 
+    public void vsHuman() {
+
+    }
+
+    public void vsComputer() {
+
+    }
+
+
+
     // TODO Game Flow
         // Human Move
         // AI Move
