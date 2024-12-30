@@ -19,7 +19,7 @@ public class InputValidator {
     // TODO Move check number
 
     // Checks menu selections for errors
-    public static Short menuSelection() {
+    public static Short numberSelection() {
          while (!sc.hasNextShort()) {
              System.out.println("Please enter a valid number." + System.lineSeparator());
          }

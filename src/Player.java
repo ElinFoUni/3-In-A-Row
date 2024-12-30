@@ -1,6 +1,6 @@
 public class Player {
-    String name;
-    int score;
+    static String name;
+    static int score;
 
     public void Player() {
         this.name = "Unknown";

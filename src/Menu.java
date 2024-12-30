@@ -12,7 +12,7 @@ public class Menu {
         // Checks if there are one or two players
         System.out.println("Welcome!" + "\n");
         System.out.println("Are you one, or two players?" + "\n");
-        switch (InputValidator.menuSelection()) {
+        switch (InputValidator.numberSelection()) {
             case 1:
                 System.out.println("Please enter your name: " + "\n");
                 p1Name = InputValidator.nameCheck();
@@ -35,7 +35,7 @@ public class Menu {
             System.out.println("Please select one of the following:" + "\n");
             System.out.println("1) Start Game" + "\n");
             System.out.println("2) Exit Game" + "\n");
-                switch (InputValidator.menuSelection()) {
+                switch (InputValidator.numberSelection()) {
                     case 1:
                         if (twoPlayers) {
                             new Gameplay().vsHuman(p1Name, p2Name);
