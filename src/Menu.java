@@ -7,9 +7,8 @@ public class Menu {
     public static void mainMenu() {
         Scanner sc = new Scanner(System.in);
 
-        Player p1 = new Player();
-        Player p2 = new Player();
-        AI computer = new AI();
+        String p1Name = "Unknown";
+        String p2Name = "Unknown";
 
         boolean twoPlayers = false;
         boolean end = false;
@@ -19,15 +18,15 @@ public class Menu {
         switch (InputValidator.menuSelection()) {
             case 1:
                 System.out.println("Please enter your name: " + "\n");
-                p1.name = InputValidator.nameCheck();
-                System.out.println("Hi, " + p1.name + "!" + "\n");
+                p1Name = InputValidator.nameCheck();
+                System.out.println("Hi, " + p1Name + "!" + "\n");
                 break;
             case 2:
                 System.out.println("Please enter your names:" + "\n");
-                p1.name = InputValidator.nameCheck();
-                p2.name = InputValidator.nameCheck();
+                p1Name= InputValidator.nameCheck();
+                p2Name = InputValidator.nameCheck();
                 twoPlayers = true;
-                System.out.println("Hi, " + p1.name + ", and" + p2.name + "!" + "\n");
+                System.out.println("Hi, " + p1Name + ", and" + p2Name + "!" + "\n");
                 break;
             default:
                 System.out.println("Please select 1 or 2." + "\n");
@@ -36,15 +35,15 @@ public class Menu {
         do {
             System.out.println("==========|| MAIN MENU ||=========");
             System.out.println("Please select one of the following:" + "\n");
-            System.out.println("1) Start Game");
-            System.out.println("2) Exit Game");
+            System.out.println("1) Start Game" + "\n");
+            System.out.println("2) Exit Game" + "\n");
                 switch (InputValidator.menuSelection()) {
                     case 1:
                         if (twoPlayers) {
-                            new Gameplay().vsHuman();
+                            new Gameplay().vsHuman(p1Name, p2Name);
 
                         } else {
-                            new Gameplay().vsComputer();
+                            new Gameplay().vsComputer(p1Name);
                         }
                         break;
                     case 2:
@@ -54,8 +53,5 @@ public class Menu {
                         System.out.println("Please select 1 or 2." + "\n");
                 }
         } while (!end);
-
-
     }
-
 }

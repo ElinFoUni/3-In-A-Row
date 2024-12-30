@@ -1,15 +1,18 @@
 // This class handles the core loop of the game
-import java.util.Scanner;
 
 public class Gameplay {
-    String player = "Unknown";
 
+    Player p1 = new Player();
+    Player p2 = new Player();
+    AI computer = new AI();
 
-    public void vsHuman() {
-
+    public void vsHuman(String p1Name, String p2Name) {
+        p1.name = p1Name;
+        p2.name = p2Name;
     }
 
-    public void vsComputer() {
+    public void vsComputer(String p1Name) {
+        p1.name = p1Name;
 
     }
 
@@ -18,7 +21,7 @@ public class Gameplay {
     // TODO Game Flow
         // Human Move
         // AI Move
-        // Check valid move
+        // Check valid move (empty, OOR)
     // TODO Check Win/Lose
     // TODO Check Draw
 

@@ -9,7 +9,7 @@ public class Main {
 
 
     //GODKÄNT
-    // TODO spelbart mellan två människor som turas om att ge indata till terminalen/kommandotolken där spelet visas med text-baserad grafik.
+    // TODO spelbart mellan två människor
     // TODO Spelet ska kontrollera och meddela vilken spelare som vunnit eller om spelet slutat oavgjort
     // TODO Spelet ska vid varje drag kontrollera att indata motsvarar en tom ruta i rutnätet
     // TODO När en spelare vunnit börjar spelet om från början.
