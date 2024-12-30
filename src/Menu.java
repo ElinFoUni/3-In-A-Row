@@ -1,4 +1,3 @@
-
 public class Menu {
 
     public static void mainMenu() {
@@ -30,7 +29,6 @@ public class Menu {
                 System.out.println("Please select 1 or 2." + "\n");
         }
 
-        // Menu
         do {
             System.out.println("==========|| MAIN MENU ||=========");
             System.out.println("Please select one of the following:" + "\n");

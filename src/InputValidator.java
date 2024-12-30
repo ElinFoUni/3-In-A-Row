@@ -3,7 +3,7 @@ import java.util.Scanner;
 public class InputValidator {
     static Scanner sc = new Scanner(System.in);
 
-    // checks if the Player name is valid or not.
+    // checks if the Player name is a valid string or not. A bit wonky with two players
      public static String nameCheck() {
          sc.nextLine();
          String name = sc.nextLine();
@@ -15,30 +15,12 @@ public class InputValidator {
          return name;
      }
 
-     //TODO Check if you need input.isEmpty() ^^
-
-    // TODO Move check number
-
-    // Checks menu selections for errors
+    // Checks menu/move selections for errors
     public static Short numberSelection() {
          while (!sc.hasNextShort()) {
              System.out.println("Please enter a valid number." + System.lineSeparator());
+             sc.nextLine();
          }
         return sc.nextShort();
     }
-
-
-    /*static boolean isShort(String number) {
-        try {
-            Short.parseShort(number);
-            return true;
-            }
-        catch (NumberFormatException e){
-            return false;
-            }
-    }*/
-
-
-
-
 }

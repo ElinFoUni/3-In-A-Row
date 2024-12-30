@@ -6,12 +6,4 @@ public class Player {
         name = "Unknown";
         score = 0;
     }
-
-    @Override
-    public String toString() {
-        return "Player{" +
-                "Hi, '" + name + "!" + '\'' +
-                '}';
-    }
-
 }

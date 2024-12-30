@@ -6,9 +6,6 @@ public class Gameplay {
         AI computer;
         GameSetup board = new GameSetup();
         boolean gameOver = false;
-        String player1Name;
-        String player2Name;
-        String computerName;
 
         public Gameplay(Player p1, Player p2) {
             this.p1 = p1;
@@ -20,9 +17,7 @@ public class Gameplay {
             this.computer = computer;
         }
 
-
-
-
+        // Handles multiplayer game-loop
         public void vsHuman() {
 
             while (!gameOver) {
@@ -39,10 +34,10 @@ public class Gameplay {
                     gameOver = true;
                     break;
                 }
-
             }
         }
 
+        // Handles single player game-loop
         public void vsComputer() {
             while (!gameOver) {
                     p1Round();
@@ -58,12 +53,12 @@ public class Gameplay {
                         gameOver = true;
                         break;
                     }
-
             }
         }
 
+        // player 1 round
         public void p1Round() {
-            System.out.println("" + p1.name + " where do you want to place your mark?" + "\n");
+            System.out.println(p1.name + ", where do you want to place your mark?" + "\n");
             board.printBoard();
             short move = validMove();
             int index = move - 1;
@@ -72,6 +67,7 @@ public class Gameplay {
 
         }
 
+        // player 2 round
         public void p2Round() {
             System.out.println("" + p2.name + " where do you want to place your mark?" + "\n");
             board.printBoard();
@@ -81,6 +77,7 @@ public class Gameplay {
             board.printBoard();
         }
 
+        // computer player chooses a random unoccupied spot
         public void computerRound() {
             System.out.println(computer.name + " makes its move!");
             int randomMove;
@@ -92,58 +89,34 @@ public class Gameplay {
 
         }
 
+        // Checks single player game over status (win/draw)
         public boolean checkGameOverHuman() {
-            if ((board.board[0] == 'X' && board.board[1] == 'X' && board.board[2] == 'X')
-                    || (board.board[3] == 'X' && board.board[4] == 'X' && board.board[5] == 'X')
-                    || (board.board[6] == 'X' && board.board[7] == 'X' && board.board[8] == 'X')
-                    || (board.board[0] == 'X' && board.board[3] == 'X' && board.board[6] == 'X')
-                    || (board.board[1] == 'X' && board.board[4] == 'X' && board.board[7] == 'X')
-                    || (board.board[2] == 'X' && board.board[5] == 'X' && board.board[8] == 'X')
-                    || (board.board[0] == 'X' && board.board[4] == 'X' && board.board[8] == 'X')
-                    || (board.board[2] == 'X' && board.board[4] == 'X' && board.board[6] == 'X')) {
+            if (checkXs()) {
                 p1.score++;
-                System.out.println(p1.name + " has won! You have now won: " + p1.score + "times!");
-                System.out.println(p2.name + " has won: " + p2.score + "times." + "\n");
+                System.out.println(p1.name + " has won! You have now won: " + p1.score + " times!");
+                System.out.println(p2.name + " has won: " + p2.score + " times." + "\n");
                 return true;
-            } else if ((board.board[0] == 'O' && board.board[1] == 'O' && board.board[2] == 'O')
-                    || (board.board[3] == 'O' && board.board[4] == 'O' && board.board[5] == 'O')
-                    || (board.board[6] == 'O' && board.board[7] == 'O' && board.board[8] == 'O')
-                    || (board.board[0] == 'O' && board.board[3] == 'O' && board.board[6] == 'O')
-                    || (board.board[1] == 'O' && board.board[4] == 'O' && board.board[7] == 'O')
-                    || (board.board[2] == 'O' && board.board[5] == 'O' && board.board[8] == 'O')
-                    || (board.board[0] == 'O' && board.board[4] == 'O' && board.board[8] == 'O')
-                    || (board.board[2] == 'O' && board.board[4] == 'O' && board.board[6] == 'O')) {
+            } else if (checkOs()) {
                 p2.score++;
-                System.out.println(p2.name + " has won! You have now won: " + p2.score + "times!" + "\n");
+                System.out.println(p2.name + " has won! You have now won: " + p2.score + " times!" + "\n");
                 System.out.println(p1.name + " has won: " + p1.score + " times." + "\n");
                 return true;
             } else if (checkDraw()) {
                 System.out.println("It's a draw!");
                 return true;
-            } else return false;
+            } else {
+                return false;
+            }
         }
 
+        // Checks multiplayer game status
         public boolean checkGameOverAI() {
-            if ((board.board[0] == 'X' && board.board[1] == 'X' && board.board[2] == 'X')
-                    || (board.board[3] == 'X' && board.board[4] == 'X' && board.board[5] == 'X')
-                    || (board.board[6] == 'X' && board.board[7] == 'X' && board.board[8] == 'X')
-                    || (board.board[0] == 'X' && board.board[3] == 'X' && board.board[6] == 'X')
-                    || (board.board[1] == 'X' && board.board[4] == 'X' && board.board[7] == 'X')
-                    || (board.board[2] == 'X' && board.board[5] == 'X' && board.board[8] == 'X')
-                    || (board.board[0] == 'X' && board.board[4] == 'X' && board.board[8] == 'X')
-                    || (board.board[2] == 'X' && board.board[4] == 'X' && board.board[6] == 'X')) {
+            if (checkXs()) {
                 p1.score++;
                 System.out.println(p1.name + " has won! You have now won: " + p1.score + " times!");
                 System.out.println(computer.name + " has won: " + computer.score + " times." + "\n");
                 return true;
-            } else if ((board.board[0] == 'O' && board.board[1] == 'O' && board.board[2] == 'O')
-                    || (board.board[3] == 'O' && board.board[4] == 'O' && board.board[5] == 'O')
-                    || (board.board[6] == 'O' && board.board[7] == 'O' && board.board[8] == 'O')
-                    || (board.board[0] == 'O' && board.board[3] == 'O' && board.board[6] == 'O')
-                    || (board.board[1] == 'O' && board.board[4] == 'O' && board.board[7] == 'O')
-                    || (board.board[2] == 'O' && board.board[5] == 'O' && board.board[8] == 'O')
-                    || (board.board[0] == 'O' && board.board[4] == 'O' && board.board[8] == 'O')
-                    || (board.board[2] == 'O' && board.board[4] == 'O' && board.board[6] == 'O')) {
+            } else if (checkOs()) {
                 computer.score++;
                 System.out.println(computer.name + " has won! You have now won: " + computer.score + " times!" + "\n");
                 System.out.println(p1.name + " has won: " + p1.score + " times." + "\n");
@@ -156,6 +129,7 @@ public class Gameplay {
             }
         }
 
+        // Checks for a draw, used in buth SP and MP methods above
         public boolean checkDraw() {
             for (char c : board.board) {
                 if (c == '1' || c == '2' || c == '3' || c == '4' || c == '5'
@@ -166,6 +140,7 @@ public class Gameplay {
             return true;
         }
 
+        // checks if a move is valid or not, or out of bounds
         private short validMove() {
             short move = InputValidator.numberSelection();
             int index = move - 1;
@@ -181,11 +156,25 @@ public class Gameplay {
             return move;
         }
 
-        // TODO Game Flow
-        // Human Move
-        // AI Move
-        // Check valid move (empty, OOR)
-        // TODO Check Win/Lose
-        // TODO Check Draw
+        private boolean checkXs() {
+            return (board.board[0] == 'X' && board.board[1] == 'X' && board.board[2] == 'X')
+                    || (board.board[3] == 'X' && board.board[4] == 'X' && board.board[5] == 'X')
+                    || (board.board[6] == 'X' && board.board[7] == 'X' && board.board[8] == 'X')
+                    || (board.board[0] == 'X' && board.board[3] == 'X' && board.board[6] == 'X')
+                    || (board.board[1] == 'X' && board.board[4] == 'X' && board.board[7] == 'X')
+                    || (board.board[2] == 'X' && board.board[5] == 'X' && board.board[8] == 'X')
+                    || (board.board[0] == 'X' && board.board[4] == 'X' && board.board[8] == 'X')
+                    || (board.board[2] == 'X' && board.board[4] == 'X' && board.board[6] == 'X');
+        }
 
+        private boolean checkOs() {
+            return (board.board[0] == 'O' && board.board[1] == 'O' && board.board[2] == 'O')
+                    || (board.board[3] == 'O' && board.board[4] == 'O' && board.board[5] == 'O')
+                    || (board.board[6] == 'O' && board.board[7] == 'O' && board.board[8] == 'O')
+                    || (board.board[0] == 'O' && board.board[3] == 'O' && board.board[6] == 'O')
+                    || (board.board[1] == 'O' && board.board[4] == 'O' && board.board[7] == 'O')
+                    || (board.board[2] == 'O' && board.board[5] == 'O' && board.board[8] == 'O')
+                    || (board.board[0] == 'O' && board.board[4] == 'O' && board.board[8] == 'O')
+                    || (board.board[2] == 'O' && board.board[4] == 'O' && board.board[6] == 'O');
+        }
 }
