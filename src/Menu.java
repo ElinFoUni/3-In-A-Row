@@ -1,10 +1,11 @@
+
 public class Menu {
 
     public static void mainMenu() {
 
-        // Saving the names as strings so that I can pass them to the gameplay class
-        String p1Name = "Unknown";
-        String p2Name = "Unknown";
+        Player p1 = new Player();
+        Player p2 = new Player();
+        AI computer = new AI();
 
         boolean twoPlayers = false;
         boolean end = false;
@@ -15,15 +16,15 @@ public class Menu {
         switch (InputValidator.numberSelection()) {
             case 1:
                 System.out.println("Please enter your name: " + "\n");
-                p1Name = InputValidator.nameCheck();
-                System.out.println("Hi, " + p1Name + "!" + "\n");
+                p1.name = InputValidator.nameCheck();
+                System.out.println("Hi, " + p1.name + "!" + "\n");
                 break;
             case 2:
                 System.out.println("Please enter your names:" + "\n");
-                p1Name= InputValidator.nameCheck();
-                p2Name = InputValidator.nameCheck();
+                p1.name= InputValidator.nameCheck();
+                p2.name = InputValidator.nameCheck();
                 twoPlayers = true;
-                System.out.println("Hi, " + p1Name + ", and" + p2Name + "!" + "\n");
+                System.out.println("Hi, " + p1.name + ", and " + p2.name + "!" + "\n");
                 break;
             default:
                 System.out.println("Please select 1 or 2." + "\n");
@@ -38,10 +39,10 @@ public class Menu {
                 switch (InputValidator.numberSelection()) {
                     case 1:
                         if (twoPlayers) {
-                            new Gameplay().vsHuman(p1Name, p2Name);
+                            new Gameplay(p1, p2).vsHuman();
 
                         } else {
-                            new Gameplay().vsComputer(p1Name);
+                            new Gameplay(p1, computer).vsComputer();
                         }
                         break;
                     case 2:

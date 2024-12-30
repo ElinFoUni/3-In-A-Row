@@ -1,10 +1,10 @@
 public class Player {
-    static String name;
-    static int score;
+    String name;
+    int score;
 
-    public void Player() {
-        this.name = "Unknown";
-        this.score = 0;
+    public Player() {
+        name = "Unknown";
+        score = 0;
     }
 
     @Override

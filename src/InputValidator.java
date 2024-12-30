@@ -5,6 +5,7 @@ public class InputValidator {
 
     // checks if the Player name is valid or not.
      public static String nameCheck() {
+         sc.nextLine();
          String name = sc.nextLine();
          // Java 11 or later, otherwise it needs to say: input.trim().isEmpty()
          while (name == null || name.isBlank()) {
