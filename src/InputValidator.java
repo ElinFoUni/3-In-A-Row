@@ -3,7 +3,7 @@ import java.util.Scanner;
 public class InputValidator {
     static Scanner sc = new Scanner(System.in);
 
-    // checks if the player name is valid or not.
+    // checks if the Player name is valid or not.
      public static String nameCheck() {
          String name = sc.nextLine();
          // Java 11 or later, otherwise it needs to say: input.trim().isEmpty()
@@ -18,6 +18,7 @@ public class InputValidator {
 
     // TODO Move check number
 
+    // Checks menu selections for errors
     public static Short menuSelection() {
          while (!sc.hasNextShort()) {
              System.out.println("Please enter a valid number." + System.lineSeparator());

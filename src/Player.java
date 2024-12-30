@@ -2,7 +2,7 @@ public class Player {
     String name;
     int score;
 
-    public Player() {
+    public void Player() {
         this.name = "Unknown";
         this.score = 0;
     }

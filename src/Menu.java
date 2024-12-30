@@ -1,18 +1,15 @@
-import java.sql.SQLOutput;
-import java.util.Scanner;
-
-
 public class Menu {
 
     public static void mainMenu() {
-        Scanner sc = new Scanner(System.in);
 
+        // Saving the names as strings so that I can pass them to the gameplay class
         String p1Name = "Unknown";
         String p2Name = "Unknown";
 
         boolean twoPlayers = false;
         boolean end = false;
 
+        // Checks if there are one or two players
         System.out.println("Welcome!" + "\n");
         System.out.println("Are you one, or two players?" + "\n");
         switch (InputValidator.menuSelection()) {
@@ -32,6 +29,7 @@ public class Menu {
                 System.out.println("Please select 1 or 2." + "\n");
         }
 
+        // Menu
         do {
             System.out.println("==========|| MAIN MENU ||=========");
             System.out.println("Please select one of the following:" + "\n");
